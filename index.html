@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NKOLABALA PHONE SERVICES — Repairs & Sales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Professional phone repair, sales and accessories in Nkola Bala. Fast repairs, genuine parts and great warranties.">
+</head>
+<body>
+    <!-- (access overlay removed) -->
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="logo.svg" alt="NKOLABALA logo" class="logo">
+                <div class="brand-text">
+                    <span class="brand-name">NKOLABALA</span>
+                    <span class="brand-sub">Phone Services</span>
+                </div>
+            </a>
+            <div id="admin-area" class="admin-area" style="display:none;align-items:center;gap:0.6rem">
+                <span class="small">Admin</span>
+                <button id="logout-btn" class="button button-ghost">Logout</button>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <button class="login-toggle" aria-label="Open login">Login</button>
+            <nav class="site-nav" id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="button button-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Works banner: shown after access key is entered -->
+    <div id="works-banner" class="works-banner hidden" aria-live="polite">
+        <div class="container">
+            <span class="works-label">Works:</span>
+            <ul class="works-inline">
+                <li role="button" tabindex="0" data-phones="+256766192515,+25674322196">Morning</li>
+                <li role="button" tabindex="0" data-phones="+256706168964">Nk Senka</li>
+                <li role="button" tabindex="0" data-phones="">Najibo</li>
+                <li role="button" tabindex="0" data-phones="">Kanyakola</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Work phone panel: shown when a work name is tapped/clicked -->
+    <div id="work-phone-panel" class="work-phone-panel hidden" role="region" aria-live="polite">
+        <div class="container panel-wrap">
+            <div class="panel-inner">
+                <strong id="panel-title">Contacts</strong>
+                <ul id="panel-phones" class="panel-phones"></ul>
+                <div class="panel-actions">
+                    <button id="panel-close" class="button button-ghost">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login overlay (password) -->
+    <div id="login-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+        <div class="access-modal login-modal">
+            <h2 id="login-title">Site Login</h2>
+            <p class="muted">Enter the site password to sign in as admin.</p>
+            <form id="login-form">
+                <label for="login-password" class="sr-only">Password</label>
+                <input id="login-password" name="login-password" type="password" placeholder="Password" autocomplete="current-password" required>
+                <div class="access-actions">
+                    <button type="submit" class="button button-primary">Sign In</button>
+                </div>
+                <p id="login-error" class="access-error" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Trusted Phone Repairs & Sales in Nkola Bala</h1>
+                    <p class="lead">Fast diagnostics, reliable repairs and quality devices — backed by warranty. Walk-ins welcome or book online.</p>
+                    <p class="hero-cta">
+                        <a href="#contact" class="button button-primary">Get a Quote</a>
+                        <a href="#services" class="button">Our Services</a>
+                    </p>
+                </div>
+                <div class="hero-media">
+                    <img src="" alt="Phone repair illustration" class="hero-image" aria-hidden="true">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-sub">Comprehensive services for every make and model.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>Phone Repairs</h3>
+                        <p>Screen, charging port, speaker, and more — repaired quickly with quality parts.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Battery Replacement</h3>
+                        <p>Battery health diagnostics and fast replacement with warranty.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Device Sales</h3>
+                        <p>New and refurbished phones from trusted brands at great prices.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Accessories</h3>
+                        <p>Cases, chargers, screen protectors and more — tested for compatibility.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container about-inner">
+                <div>
+                    <h2>About NKOLABALA</h2>
+                    <p>We are a local team of certified technicians serving Nkola Bala with honest pricing and fast turnaround. Our priority is fixing your device right the first time.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat"><strong>10+</strong><span>Years experience</span></div>
+                    <div class="stat"><strong>5,000+</strong><span>Repairs completed</span></div>
+                    <div class="stat"><strong>90%</strong><span>Same-day repairs</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-details">
+                        <p><strong>Address:</strong> Busabala, Kampala</p>
+                        <p><strong>Phone:</strong> <a href="tel:+256701232423">+256701232423</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:srnkolabalaba@gmail.com">srnkolabalaba@gmail.com</a></p>
+                        <p>Walk-ins welcome. Business hours: Mon–Sat 9:00–18:00</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" required>
+
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <div class="form-actions">
+                            <button type="submit" class="button button-primary">Send Message</button>
+                            <button type="reset" class="button button-ghost">Reset</button>
+                        </div>
+                        <div id="form-status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 NKOLABALA PHONE SERVICES. All rights reserved.</p>
+            <p class="small">Designed for local customers — Questions? <a href="#contact">Contact us</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Admin dashboard: visible only when admin logged in -->
+    <section id="admin-dashboard" class="section admin-dashboard hidden">
+        <div class="container">
+            <h2>Admin Dashboard — Income</h2>
+            <p class="muted">Record today's income and view recent totals.</p>
+            <div class="admin-grid">
+                <div class="admin-panel">
+                    <label for="income-amount">Today's income (currency)</label>
+                    <input id="income-amount" type="number" step="0.01" placeholder="0.00">
+                    <div class="form-actions">
+                        <button id="add-income-btn" class="button button-primary">Add Today's Income</button>
+                        <button id="clear-income-btn" class="button button-ghost">Clear All</button>
+                    </div>
+                    <p id="income-status" class="muted"></p>
+                </div>
+                <div class="admin-stats">
+                    <div class="stat"><strong id="today-amount">0.00</strong><span>Today</span></div>
+                    <div class="stat"><strong id="week-amount">0.00</strong><span>Last 7 days</span></div>
+                    <div class="stat"><strong id="month-amount">0.00</strong><span>Last 30 days</span></div>
+                </div>
+            </div>
+            <h3>Recent entries</h3>
+            <ul id="income-list" class="income-list"></ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+:root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --accent:#0b5fff;
+    --muted:#6b7280;
+    --text:#0f172a;
+    --radius:10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+.site-header{background:#fff;border-bottom:1px solid #e6e9ef}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{display:flex;align-items:center;text-decoration:none;color:inherit}
+.logo{width:48px;height:48px;margin-right:0.6rem}
+.brand-name{display:block;font-weight:700;font-family:Rubik,Inter;font-size:1.05rem}
+.brand-sub{display:block;font-size:0.75rem;color:var(--muted);margin-top:2px}
+
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+.site-nav ul{list-style:none;display:flex;gap:0.75rem;margin:0;padding:0}
+.site-nav a{color:var(--text);text-decoration:none;padding:0.5rem 0.6rem;border-radius:6px}
+.site-nav a.button-primary{background:var(--accent);color:#fff;padding:0.5rem 0.9rem}
+
+.hero{padding:3.5rem 0;background:linear-gradient(180deg, #f8fbff 0%, #ffffff 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+.hero-content h1{font-family:Rubik,Inter;font-size:2rem;margin:0 0 0.6rem}
+.lead{color:var(--muted);margin:0 0 1rem}
+.hero-cta .button{margin-right:0.5rem}
+.button{display:inline-block;padding:0.55rem 0.9rem;border-radius:8px;border:1px solid transparent;background:#fff;color:var(--text);cursor:pointer}
+.button-primary{background:var(--accent);color:#fff}
+.button-ghost{background:transparent;border:1px solid #d1d5db}
+
+.services{padding:2.5rem 0}
+.section-title{font-size:1.25rem;margin:0 0 0.35rem}
+.section-sub{color:var(--muted);margin:0 0 1.25rem}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.service-card{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.service-card h3{margin:0 0 0.4rem}
+
+.about{padding:2rem 0}
+.about-inner{display:flex;gap:1.5rem;align-items:center}
+.about-stats{display:flex;gap:1rem}
+.stat{background:var(--card);padding:0.8rem;border-radius:8px;text-align:center;min-width:110px}
+.stat strong{display:block;font-size:1.25rem}
+
+.contact{padding:2rem 0}
+.contact-grid{display:grid;grid-template-columns:360px 1fr;gap:1rem}
+.contact-details{background:var(--card);padding:1rem;border-radius:8px}
+.contact-form{background:var(--card);padding:1rem;border-radius:8px;display:flex;flex-direction:column;gap:0.5rem}
+.contact-form label{font-size:0.85rem;color:var(--muted)}
+.contact-form input,.contact-form textarea{padding:0.6rem;border:1px solid #e6e9ef;border-radius:6px}
+.form-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+#form-status{margin-top:0.6rem;color:var(--muted)}
+
+.site-footer{padding:1rem 0;background:#fff;border-top:1px solid #e6e9ef;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.small{color:var(--muted);font-size:0.9rem;margin:0}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .about-inner{flex-direction:column}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  .site-nav{display:none}
+  .site-nav.open{display:block;position:absolute;right:1rem;top:72px;background:#fff;padding:0.75rem;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,0.08)}
+  .site-nav ul{flex-direction:column}
+}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.access-modal{background:var(--card);padding:1.25rem;border-radius:12px;max-width:420px;width:92%;box-shadow:0 12px 40px rgba(2,6,23,0.2);text-align:center}
+.access-modal h2{margin:0 0 0.4rem;font-family:Rubik,Inter}
+.access-modal .muted{color:var(--muted);margin:0 0 0.75rem}
+.access-modal input{width:100%;padding:0.6rem;border:1px solid #e6e9ef;border-radius:8px;margin-top:0.5rem}
+.access-actions{margin-top:0.75rem}
+.access-error{color:#b91c1c;font-size:0.95rem;margin-top:0.6rem;min-height:1.2rem}
+.sr-only{position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Hide overlay when access granted by adding .hidden class */
+/* (access-overlay removed) */
+
+/* Login overlay uses similar styles but lower z-index so it doesn't conflict with full-site gate */
+.login-overlay{position:fixed;inset:0;background:rgba(3,7,18,0.5);display:flex;align-items:center;justify-content:center;z-index:8000}
+.login-overlay.hidden{display:none}
+.login-modal{max-width:420px;padding:1.25rem}
+.login-toggle{margin-left:0.5rem;background:transparent;border:1px solid transparent;padding:0.4rem 0.6rem;border-radius:8px}
+.admin-area .small{color:var(--muted);font-size:0.9rem}
+
+/* Works list shown on access overlay before login */
+.works-list{margin-top:0.8rem;text-align:left}
+.works-list strong{display:block;margin-bottom:0.35rem;color:var(--muted)}
+.works-list ul{list-style:none;padding:0;display:flex;gap:0.5rem;flex-wrap:wrap}
+.works-list li{background:#f1f5f9;padding:0.35rem 0.55rem;border-radius:999px;color:var(--text);font-weight:600;font-size:0.92rem}
+
+/* Works banner shown after unlocking the site */
+.works-banner{background:linear-gradient(90deg,#0b5fff0a,transparent);padding:0.6rem 0;border-bottom:1px solid #eef6ff}
+.works-banner .works-label{font-weight:700;color:var(--accent);margin-right:0.6rem}
+.works-inline{list-style:none;padding:0;margin:0;display:inline-flex;gap:0.5rem}
+.works-inline li{background:#fff;border:1px solid #e6eefc;padding:0.35rem 0.6rem;border-radius:999px;color:var(--text);font-weight:600}
+.works-banner.hidden{display:none}
+
+/* Work phone panel */
+.work-phone-panel{position:fixed;right:1rem;bottom:1rem;z-index:9999}
+.work-phone-panel .panel-wrap{max-width:360px}
+.work-phone-panel .panel-inner{background:var(--card);padding:0.75rem;border-radius:12px;box-shadow:0 12px 32px rgba(2,6,23,0.12)}
+.work-phone-panel #panel-title{display:block;margin-bottom:0.5rem}
+.panel-phones{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem}
+.panel-phones li{display:flex;justify-content:space-between;align-items:center;padding:0.45rem;border-radius:8px;border:1px solid #eef4ff;background:#fff}
+.panel-phones a{color:var(--accent);text-decoration:none;margin-right:0.6rem}
+.panel-actions{margin-top:0.5rem;text-align:right}
+.work-phone-panel.hidden{display:none}
+
+/* Utility hidden */
+.hidden{display:none!important}
+
+/* Admin dashboard styles */
+.admin-dashboard{padding:1.5rem 0;background:linear-gradient(180deg,#fff,#fbfdff);border-top:1px solid #eef2f7}
+.admin-grid{display:flex;gap:1rem;align-items:flex-start}
+.admin-panel{flex:1;max-width:420px;background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+.admin-panel label{display:block;margin-bottom:0.4rem;color:var(--muted)}
+.admin-panel input{width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6e9ef}
+.admin-stats{display:flex;gap:0.75rem;align-items:center}
+.income-list{margin-top:0.75rem;list-style:none;padding:0}
+.income-list li{background:var(--card);padding:0.6rem;border-radius:8px;margin-bottom:0.5rem;display:flex;justify-content:space-between}
+
+@media (max-width:900px){
+  .admin-grid{flex-direction:column}
+  .admin-stats{justify-content:space-between}
+}
